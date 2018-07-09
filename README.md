@@ -1,8 +1,16 @@
-# file-collections-sa-s3
+# reaction-file-collections-sa-s3
 
 AWS S3 adapter for reaction-file-collections.
 
 [Read the reaction-file-collections docs](https://github.com/reactioncommerce/reaction-file-collections)
+
+## Installation
+
+Get this package from NPM using the following command:
+
+```
+npm install reaction-file-collections-sa-s3
+```
 
 ## Help
 

@@ -1,17 +1,17 @@
 {
-  "name": "@reactioncommerce/file-collections-sa-s3",
-  "version": "0.0.1",
-  "description": "An S3 storage adapter for Reaction FileCollections.",
+  "name": "reaction-file-collections-sa-s3",
+  "version": "0.0.0",
+  "description": "An S3 storage adapter for Reaction Commerce's reaction-file-collections",
   "author": "Loan Laux",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactioncommerce/reaction-file-collections.git"
+    "url": "https://github.com/loanlaux/reaction-file-collections-sa-s3"
   },
   "bugs": {
-    "url": "https://github.com/reactioncommerce/reaction-file-collections/issues"
+    "url": "https://github.com/loanlaux/reaction-file-collections-sa-s3/issues"
   },
-  "homepage": "https://github.com/reactioncommerce/reaction-file-collections",
+  "homepage": "https://github.com/loanlaux/reaction-file-collections-sa-s3",
   "files": [
     "dist",
     "LICENSE",
@@ -27,9 +27,6 @@
     ],
     "sourceMaps": true,
     "retainLines": true
-  },
-  "eslintConfig": {
-    "extends": "@reactioncommerce"
   },
   "main": "./dist/index.js",
   "scripts": {

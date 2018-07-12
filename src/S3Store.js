@@ -3,9 +3,6 @@ import { Readable, Writable } from "stream";
 import StorageAdapter from "@reactioncommerce/file-collections-sa-base";
 import debug from "./debug";
 
-// 256k is default GridFS chunk size, but performs terribly for largish files
-const DEFAULT_CHUNK_SIZE = 1024 * 1024 * 2;
-
 export default class S3Store extends StorageAdapter {
   constructor({
     collectionPrefix = "fc_sa_s3.",

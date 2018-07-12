@@ -37,8 +37,7 @@
     "@reactioncommerce/file-collections-sa-base": "^0.0.2",
     "aws-sdk": "^2.270.1",
     "babel-runtime": "^6.26.0",
-    "debug": "^3.1.0",
-    "gridfs-stream": "^1.1.1"
+    "debug": "^3.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

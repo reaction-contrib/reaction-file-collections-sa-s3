@@ -8,8 +8,26 @@ AWS S3 adapter for reaction-file-collections.
 
 Get this package from NPM using the following command:
 
-```
+```bash
 npm install reaction-file-collections-sa-s3
+```
+
+## Configuration
+
+Set up your AWS S3 credentials using environment variables:
+
+```bash
+# The AWS region your S3 bucket is in
+export AWS_S3_REGION="us-east-1"
+
+# Name of the S3 bucket you want to store your media in
+export AWS_S3_BUCKET="reaction-media"
+
+# An AWS access key with the appropriate S3 permissions
+export AWS_ACCESS_KEY_ID="QWERTYUIOPASDFGH"
+
+# The secret access key that goes with the access key
+export AWS_SECRET_ACCESS_KEY="re@cti0n123hElLoW0rld"
 ```
 
 ## Help

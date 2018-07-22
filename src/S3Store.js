@@ -70,20 +70,23 @@ export default class S3Store extends StorageAdapter {
 
     const stream = new Readable({
       read: (size) => {
-        const body = object.Body.slice(startPos || 0, endPos || fileKey.size);
+        debug(`S3Store read body from ${totalTransferredData} to ${totalTransferredData + size}`);
+        const body = object.Body.slice(totalTransferredData, totalTransferredData + size);
 
         totalTransferredData += size;
 
         debug(`S3Store _getReadStream transferred ${totalTransferredData}`);
-
+        
         stream.push(body);
-
-        if ((typeof endPos && totalTransferredData >= endPos) || totalTransferredData >= fileKey.size) {
+ 
+        if ((typeof endPos === "number" && totalTransferredData >= endPos) || totalTransferredData >= fileKey.size) {
           debug("S3Store _getReadStream ending stream");
           stream.push(null);
         }
       }
     });
+
+//    stream.on("end", () => stream.emit("close"));
 
     return stream;
   }

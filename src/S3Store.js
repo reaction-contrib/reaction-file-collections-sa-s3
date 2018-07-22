@@ -148,7 +148,7 @@ export default class S3Store extends StorageAdapter {
         }
       }).promise();
 
-      debug("S3 mutipart upload completed", uploadedFile);
+      debug("S3 multipart upload completed", uploadedFile);
 
       // Emit end and return the fileKey, size, and updated date
       writeStream.emit("stored", {

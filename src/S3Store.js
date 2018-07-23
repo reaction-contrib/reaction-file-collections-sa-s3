@@ -84,8 +84,6 @@ export default class S3Store extends StorageAdapter {
       }
     });
 
-//    stream.on("end", () => stream.emit("close"));
-
     return stream;
   }
 

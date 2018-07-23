@@ -104,7 +104,7 @@ export default class S3Store extends StorageAdapter {
     debug("s3.createMultipartUpload data:", uploadData);
 
     if (uploadData.UploadId === undefined) {
-      throw new Error(`Couldn't get upload ID from S3`);
+      throw new Error("Couldn't get upload ID from S3");
     }
 
     uploadId = uploadData.UploadId;

@@ -1,14 +1,12 @@
-import S3 from "aws-sdk/clients/s3";
 import { Readable, Writable } from "stream";
+import S3 from "aws-sdk/clients/s3";
 import StorageAdapter from "@reactioncommerce/file-collections-sa-base";
 import debug from "./debug";
 
 export default class S3Store extends StorageAdapter {
   constructor({
     collectionPrefix = "fc_sa_s3.",
-    db,
     fileKeyMaker,
-    mongodb,
     name,
     transformRead,
     transformWrite
@@ -19,7 +17,7 @@ export default class S3Store extends StorageAdapter {
       transformRead,
       transformWrite
     });
-    
+
     this.s3 = new S3({
       apiVersion: "2006-03-01",
       region: process.env.AWS_S3_REGION
@@ -76,9 +74,9 @@ export default class S3Store extends StorageAdapter {
         totalTransferredData += size;
 
         debug(`S3Store _getReadStream transferred ${totalTransferredData}`);
-        
+
         stream.push(body);
- 
+
         if ((typeof endPos === "number" && totalTransferredData >= endPos) || totalTransferredData >= fileKey.size) {
           debug("S3Store _getReadStream ending stream");
           stream.push(null);
@@ -110,7 +108,7 @@ export default class S3Store extends StorageAdapter {
     if (uploadData.UploadId === undefined) {
       throw new Error(`Couldn't get upload ID from S3`);
     }
-    
+
     uploadId = uploadData.UploadId;
 
     let partNumber = 1;
@@ -125,21 +123,21 @@ export default class S3Store extends StorageAdapter {
           UploadId: uploadId,
           PartNumber: partNumber
         }).promise();
-        
+
         parts.push({
           ETag: partData.ETag,
           PartNumber: partNumber
         });
 
         debug(`Part ${partNumber} successfully uploaded`, parts);
-        
+
         partNumber += 1;
         totalFileSize += chunk.length;
 
         callback();
       }
-    }); 
-    
+    });
+
     writeStream.on("finish", async () => {
       debug("S3Store writeStream finish");
 

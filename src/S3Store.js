@@ -8,6 +8,7 @@ export default class S3Store extends StorageAdapter {
     collectionPrefix = "fc_sa_s3.",
     fileKeyMaker,
     name,
+    objectACL,
     transformRead,
     transformWrite
   } = {}) {
@@ -24,6 +25,7 @@ export default class S3Store extends StorageAdapter {
     });
 
     this.collectionName = `${collectionPrefix}${name}`.trim();
+    this.objectACL = objectACL;
   }
 
   _fileKeyMaker(fileRecord) {
@@ -96,10 +98,14 @@ export default class S3Store extends StorageAdapter {
     debug("S3Store _getWriteStream opts:", opts);
     debug("S3Store _getWriteStream options:", options);
     debug("S3Store _getWriteStream fileKey:", fileKey);
+    debug("S3Store _getWriteStream objectACL", this.objectACL);
 
     let uploadId = "";
 
-    const uploadData = await this.s3.createMultipartUpload(opts).promise();
+    const uploadData = await this.s3.createMultipartUpload({
+      ...opts,
+      ACL: this.objectACL
+    }).promise();
 
     debug("s3.createMultipartUpload data:", uploadData);
 

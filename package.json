@@ -1,7 +1,7 @@
 {
   "name": "reaction-file-collections-sa-s3",
-  "version": "0.1.0",
-  "description": "An S3 storage adapter for Reaction Commerce's reaction-file-collections",
+  "version": "0.1.1",
+  "description": "An S3 storage adapter for Reaction Commerce's reaction-file-collections, brought to you by out:grow",
   "author": "Loan Laux",
   "license": "MIT",
   "repository": {

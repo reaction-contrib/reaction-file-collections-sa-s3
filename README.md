@@ -18,16 +18,16 @@ Set up your AWS S3 credentials using environment variables:
 
 ```bash
 # The AWS region your S3 bucket is in
-export AWS_S3_REGION="us-east-1"
+AWS_S3_REGION=us-east-1
 
 # Name of the S3 bucket you want to store your media in
-export AWS_S3_BUCKET="reaction-media"
+AWS_S3_BUCKET=reaction-media
 
 # An AWS access key with the appropriate S3 permissions
-export AWS_ACCESS_KEY_ID="QWERTYUIOPASDFGH"
+AWS_ACCESS_KEY_ID=QWERTYUIOPASDFGH
 
 # The secret access key that goes with the access key
-export AWS_SECRET_ACCESS_KEY="<secret_key>"
+AWS_SECRET_ACCESS_KEY=<secret_key>
 ```
 
 ## Usage

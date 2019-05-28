@@ -40,7 +40,7 @@ When replacing the `GridFSStore` constructor with the `S3Store` one, make sure t
 
 ```javascript
 new S3Store({
-  name: "images",
+  name, // Should be provided within buildGFS
   isPublic: true,
   objectACL: "public-read",
   async transformWrite(fileRecord) {

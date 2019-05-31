@@ -30,10 +30,14 @@ export default class S3Store extends StorageAdapter {
 
   _fileKeyMaker(fileRecord) {
     const info = fileRecord.infoForCopy(this.name);
+    
+    debug("S3Store _fileKeyMaker fileRecord info:", info);
+    debug("S3Store _fileKeyMaker fileRecord size:", fileRecord.size());
+
     const result = {
-      _id: info.key || null,
+      _id: info.key || fileRecord._id,
       filename: info.name || fileRecord.name() || `${fileRecord.collectionName}-${fileRecord._id}`,
-      size: info.size
+      size: info.size || fileRecord.size()
     };
 
     debug("S3Store _fileKeyMaker result:", result);
@@ -144,6 +148,7 @@ export default class S3Store extends StorageAdapter {
 
     writeStream.on("finish", async () => {
       debug("S3Store writeStream finish");
+      debug("S3Store writeStream totalFileSize:", totalFileSize);
 
       const uploadedFile = await this.s3.completeMultipartUpload({
         ...opts,

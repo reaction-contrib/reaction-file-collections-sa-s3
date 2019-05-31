@@ -1,17 +1,17 @@
 {
   "name": "reaction-file-collections-sa-s3",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An S3 storage adapter for Reaction Commerce's reaction-file-collections, brought to you by out:grow",
-  "author": "Loan Laux",
+  "author": "out:grow",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/loanlaux/reaction-file-collections-sa-s3"
+    "url": "https://github.com/reaction-contrib/reaction-file-collections-sa-s3"
   },
   "bugs": {
-    "url": "https://github.com/loanlaux/reaction-file-collections-sa-s3/issues"
+    "url": "https://github.com/reaction-contrib/reaction-file-collections-sa-s3/issues"
   },
-  "homepage": "https://github.com/loanlaux/reaction-file-collections-sa-s3",
+  "homepage": "https://github.com/reaction-contrib/reaction-file-collections-sa-s3",
   "files": [
     "dist",
     "LICENSE",

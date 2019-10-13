@@ -51,7 +51,7 @@ new S3Store({
 
 ## Help
 
-Need help integrating this plugin into your Reaction Commerce project? Simply looking for expert [Reaction Commerce consultants](https://outgrow.io)? Want someone to train your team to use Reaction at its fullest?
+Need help integrating this plugin into your Reaction Commerce project? Simply looking for expert [Reaction Commerce consultants](https://outgrow.io/reaction-commerce-help)? Want someone to train your team to use Reaction at its fullest?
 
 Whether it is just a one-hour consultation to get you set up or helping your team ship a whole project from start to finish, you can't go wrong by reaching out to us:
 

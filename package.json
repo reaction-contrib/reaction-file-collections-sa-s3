@@ -6,12 +6,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/reaction-contrib/reaction-file-collections-sa-s3"
+    "url": "https://github.com/outgrow/reaction-file-collections-sa-s3"
   },
   "bugs": {
-    "url": "https://github.com/reaction-contrib/reaction-file-collections-sa-s3/issues"
+    "url": "https://github.com/outgrow/reaction-file-collections-sa-s3/issues"
   },
-  "homepage": "https://github.com/reaction-contrib/reaction-file-collections-sa-s3",
+  "homepage": "https://github.com/outgrow/reaction-file-collections-sa-s3",
   "files": [
     "dist",
     "LICENSE",
